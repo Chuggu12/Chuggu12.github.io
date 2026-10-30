@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | Ankit Anand</title>
+  <meta name="description" content="Projects by Ankit Anand: Excel-VBA financial automation, Wolfram Mathematica, Tableau and Power BI dashboards, and R, Stata and LaTeX work in economics and data analysis.">
+  <meta name="theme-color" content="#0a1431">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Barlow:wght@300;400;500&family=Jost:wght@300;400;500;600&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600;6..12,700;6..12,800;6..12,900&family=Playfair+Display:wght@700;800;900&family=Poppins:wght@500;600;700&family=Sedgwick+Ave+Display&family=Unbounded:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/projects.css">
+  <script>document.documentElement.classList.add("js");setTimeout(function(){if(!window.__siteReady)document.documentElement.classList.remove("js")},3000);</script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html" aria-label="Ankit Anand, home"><img src="assets/img/logo.webp" alt="Ankit Anand" width="273" height="40"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="articles.html">Article &amp; Publications</a>
+        <a href="open-source.html">Open Source</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="projects-page">
+    <section class="pj-panel" aria-labelledby="pj-title">
+      <h1 class="pj-title" id="pj-title">Projects</h1>
+
+      <div class="pj-filters" data-filters="#project-list" role="toolbar" aria-label="Filter projects">
+        <button class="pj-filter is-active" type="button" data-filter="all" aria-pressed="true" aria-controls="project-list">ALL</button>
+        <button class="pj-filter" type="button" data-filter="excel" aria-pressed="false" aria-controls="project-list">Excel</button>
+        <button class="pj-filter" type="button" data-filter="mathematica" aria-pressed="false" aria-controls="project-list">Mathematica</button>
+        <button class="pj-filter" type="button" data-filter="tableau" aria-pressed="false" aria-controls="project-list">Tableau</button>
+        <button class="pj-filter" type="button" data-filter="r" aria-pressed="false" aria-controls="project-list">R</button>
+        <button class="pj-filter" type="button" data-filter="ms-suite" aria-pressed="false" aria-controls="project-list">MS Suite</button>
+        <button class="pj-filter" type="button" data-filter="stata" aria-pressed="false" aria-controls="project-list">STATA</button>
+        <button class="pj-filter" type="button" data-filter="latex" aria-pressed="false" aria-controls="project-list">LATEX</button>
+        <button class="pj-filter" type="button" data-filter="power-bi" aria-pressed="false" aria-controls="project-list">Power BI</button>
+      </div>
+      <p id="filter-status" class="sr-only" aria-live="polite"></p>
+
+      <ul class="pj-list" id="project-list">
+        <li class="pj-item" data-cats="excel ms-suite" data-anim="fade-expand">
+          <div class="pj-media" data-dialog-open="pj-fin-vba">
+            <img src="assets/img/fin-vba.webp" alt="Excel VBA macro code beside an Aap Ka Bazar income statement and a ROCE chart with key insights" width="1232" height="511" fetchpriority="high" decoding="async">
+          </div>
+          <div class="pj-card">
+            <h2 class="pj-name">Automated Financial Analysis &amp; Stakeholder Insights</h2>
+            <p class="pj-tagline">Auto-extracts key financial metrics from financial statements via a VBA module and shows operational insights.</p>
+            <span class="pj-rule" aria-hidden="true"></span>
+            <button class="btn-green pj-more" type="button" data-dialog-open="pj-fin-vba">More Info<span class="sr-only">: Automated Financial Analysis &amp; Stakeholder Insights</span></button>
+          </div>
+        </li>
+
+        <li class="pj-item" data-cats="mathematica" data-anim="fade-expand">
+          <div class="pj-media" data-dialog-open="pj-am">
+            <img src="assets/img/am-signal.webp" alt="Mathematica plots of an amplitude-modulated signal and its spectral lines" width="636" height="614" loading="lazy" decoding="async">
+          </div>
+          <div class="pj-card">
+            <h2 class="pj-name">Amplitude Modulation</h2>
+            <p class="pj-tagline">Wolfram Mathematica</p>
+            <span class="pj-rule" aria-hidden="true"></span>
+            <button class="btn-green pj-more" type="button" data-dialog-open="pj-am">More Info<span class="sr-only">: Amplitude Modulation</span></button>
+          </div>
+        </li>
+
+        <li class="pj-item" data-cats="mathematica" data-anim="fade-expand">
+          <div class="pj-media" data-dialog-open="pj-laplace">
+            <img src="assets/img/laplace.webp" alt="Mathematica code with a contour and stream plot of cos(x)·cosh(y)" width="602" height="571" loading="lazy" decoding="async">
+          </div>
+          <div class="pj-card">
+            <h2 class="pj-name">Fundamental Solutions to Laplace Equation</h2>
+            <p class="pj-tagline">Phenomena of electrostatics, heat transfer and fluid flow visualised as solutions to Laplace&rsquo;s equation.</p>
+            <span class="pj-rule" aria-hidden="true"></span>
+            <button class="btn-green pj-more" type="button" data-dialog-open="pj-laplace">More Info<span class="sr-only">: Fundamental Solutions to Laplace Equation</span></button>
+          </div>
+        </li>
+
+        <li class="pj-item" data-cats="mathematica" data-anim="fade-expand">
+          <div class="pj-media" data-dialog-open="pj-surfaces">
+            <img src="assets/img/surfaces.webp" alt="Mathematica 3D surface plots with tangent planes and intersecting surfaces" width="623" height="639" loading="lazy" decoding="async">
+          </div>
+          <div class="pj-card">
+            <h2 class="pj-name">Mathematica Practicals: 3D Surfaces</h2>
+            <p class="pj-tagline">Calculus practicals and experiments in Wolfram Mathematica.</p>
+            <span class="pj-rule" aria-hidden="true"></span>
+            <button class="btn-green pj-more" type="button" data-dialog-open="pj-surfaces">More Info<span class="sr-only">: Mathematica Practicals: 3D Surfaces</span></button>
+          </div>
+        </li>
+
+        <li class="pj-item" data-cats="tableau" data-anim="fade-expand">
+          <div class="pj-media" data-dialog-open="pj-engagement">
+            <img src="assets/img/engagement-dashboard.webp" alt="Tableau bar and dot charts of engagement by account type and social platform" width="847" height="709" loading="lazy" decoding="async">
+          </div>
+          <div class="pj-card">
+            <h2 class="pj-name">Engagement &amp; Strategy Mapping Dashboard</h2>
+            <p class="pj-tagline">A dynamic Tableau dashboard analysing one company&rsquo;s marketing tactics, message framings, product categories, etc.</p>
+            <span class="pj-rule" aria-hidden="true"></span>
+            <button class="btn-green pj-more" type="button" data-dialog-open="pj-engagement">More Info<span class="sr-only">: Engagement &amp; Strategy Mapping Dashboard</span></button>
+          </div>
+        </li>
+
+        <li class="pj-item" data-cats="tableau ms-suite" data-anim="fade-expand">
+          <div class="pj-media" data-dialog-open="pj-market">
+            <img src="assets/img/market-dashboard.webp" alt="Tableau dashboard with a world map, a treemap of companies and bar charts of message framing and marketing tactics" width="1400" height="637" loading="lazy" decoding="async">
+          </div>
+          <div class="pj-card">
+            <h2 class="pj-name">Interactive Dashboard for Market Behaviour</h2>
+            <p class="pj-tagline">Tableau dashboard that automatically analyses market behaviour for any uploaded dataset.</p>
+            <span class="pj-rule" aria-hidden="true"></span>
+            <button class="btn-green pj-more" type="button" data-dialog-open="pj-market">More Info<span class="sr-only">: Interactive Dashboard for Market Behaviour</span></button>
+          </div>
+        </li>
+
+        <li class="pj-item" data-cats="tableau" data-anim="fade-expand">
+          <div class="pj-media" data-dialog-open="pj-term-qa">
+            <img src="assets/img/term-qa.webp" alt="Tableau QA-QC dashboard of social-media platforms and engagement in three countries, with a map" width="1400" height="487" loading="lazy" decoding="async">
+          </div>
+          <div class="pj-card">
+            <h2 class="pj-name">Tableau QA-QC TERM</h2>
+            <p class="pj-tagline">Your data, instantly intelligent. This isn&rsquo;t just a report &mdash; it&rsquo;s an interactive exploration.</p>
+            <span class="pj-rule" aria-hidden="true"></span>
+            <button class="btn-green pj-more" type="button" data-dialog-open="pj-term-qa">More Info<span class="sr-only">: Tableau QA-QC TERM</span></button>
+          </div>
+        </li>
+
+        <li class="pj-item" data-cats="tableau r" data-anim="fade-expand">
+          <div class="pj-media" data-dialog-open="pj-consumer">
+            <img src="assets/img/consumer-engagement.webp" alt="Tableau chart of average and median engagement, total posts and total engagement by account type" width="1234" height="583" loading="lazy" decoding="async">
+          </div>
+          <div class="pj-card">
+            <h2 class="pj-name">Consumer Engagement Measurement System</h2>
+            <p class="pj-tagline">Measurement in illicit trade by quantifying consumer interaction and tactic exposure using average and median engagement.</p>
+            <span class="pj-rule" aria-hidden="true"></span>
+            <button class="btn-green pj-more" type="button" data-dialog-open="pj-consumer">More Info<span class="sr-only">: Consumer Engagement Measurement System</span></button>
+          </div>
+        </li>
+
+        <li class="pj-item" data-cats="r" data-anim="fade-expand">
+          <div class="pj-media" data-dialog-open="pj-muj">
+            <img src="assets/img/hackathon-muj.webp" alt="Project write-up and R code for OCR-based processing of financial documents" width="750" height="542" loading="lazy" decoding="async">
+          </div>
+          <div class="pj-card">
+            <h2 class="pj-name">AI Financial Document Processing (MUJ Hackathon)</h2>
+            <p class="pj-tagline">OCR pipeline in R that reads, classifies and summarises scanned financial documents.</p>
+            <span class="pj-rule" aria-hidden="true"></span>
+            <button class="btn-green pj-more" type="button" data-dialog-open="pj-muj">More Info<span class="sr-only">: AI Financial Document Processing (MUJ Hackathon)</span></button>
+          </div>
+        </li>
+
+        <li class="pj-item" data-cats="r" data-anim="fade-expand">
+          <div class="pj-media" data-dialog-open="pj-chi-square">
+            <img src="assets/img/chi-square.webp" alt="R code that runs chi-square tests on platform data for India, Indonesia and Mexico" width="843" height="817" loading="lazy" decoding="async">
+          </div>
+          <div class="pj-card">
+            <h2 class="pj-name">Chi-Square Module: R</h2>
+            <p class="pj-tagline">Manually coded chi-square engine in R for cross-country statistical validations.</p>
+            <span class="pj-rule" aria-hidden="true"></span>
+            <button class="btn-green pj-more" type="button" data-dialog-open="pj-chi-square">More Info<span class="sr-only">: Chi-Square Module: R</span></button>
+          </div>
+        </li>
+
+        <li class="pj-item" data-cats="ms-suite" data-anim="fade-expand">
+          <div class="pj-media" data-dialog-open="pj-avg-median">
+            <img src="assets/img/avg-median.webp" alt="Document titled Average vs Sum of Engagement with a chart of engagement by marketing tactic" width="1078" height="699" loading="lazy" decoding="async">
+          </div>
+          <div class="pj-card">
+            <h2 class="pj-name">Average vs Median Engagement</h2>
+            <p class="pj-tagline">True engagement = total likes per post. Not all high totals mean high impact.</p>
+            <span class="pj-rule" aria-hidden="true"></span>
+            <button class="btn-green pj-more" type="button" data-dialog-open="pj-avg-median">More Info<span class="sr-only">: Average vs Median Engagement</span></button>
+          </div>
+        </li>
+
+        <li class="pj-item" data-cats="stata" data-anim="fade-expand">
+          <div class="pj-media" data-dialog-open="pj-time-series">
+            <img src="assets/img/stata-ts.webp" alt="Stata ARIMA regression output, a random-walk plot and a Dickey-Fuller unit-root test" width="1067" height="507" loading="lazy" decoding="async">
+          </div>
+          <div class="pj-card">
+            <h2 class="pj-name">Time Series Simulation &amp; ARIMA Forecasting</h2>
+            <p class="pj-tagline">Simulated AR/MA processes, stationarity testing and ARIMA model selection in Stata.</p>
+            <span class="pj-rule" aria-hidden="true"></span>
+            <button class="btn-green pj-more" type="button" data-dialog-open="pj-time-series">More Info<span class="sr-only">: Time Series Simulation &amp; ARIMA Forecasting</span></button>
+          </div>
+        </li>
+
+        <li class="pj-item" data-cats="stata latex" data-anim="fade-expand">
+          <div class="pj-media" data-dialog-open="pj-plfs">
+            <img src="assets/img/plfs-latex.webp" alt="Stata do-file that cleans and analyses PLFS 2017-18 household data" width="878" height="1005" loading="lazy" decoding="async">
+          </div>
+          <div class="pj-card">
+            <h2 class="pj-name">Demographic Modelling &amp; Dynamic LaTeX Output</h2>
+            <p class="pj-tagline">Stata-powered PLFS analysis with auto-generated LaTeX reports and visualizations.</p>
+            <span class="pj-rule" aria-hidden="true"></span>
+            <button class="btn-green pj-more" type="button" data-dialog-open="pj-plfs">More Info<span class="sr-only">: Demographic Modelling &amp; Dynamic LaTeX Output</span></button>
+          </div>
+        </li>
+
+        <li class="pj-item" data-cats="latex" data-anim="fade-expand">
+          <div class="pj-media" data-dialog-open="pj-latex">
+            <img src="assets/img/latex-proofs.webp" alt="Typeset LaTeX derivation of a series and product identity" width="718" height="720" loading="lazy" decoding="async">
+          </div>
+          <div class="pj-card">
+            <h2 class="pj-name">LaTeX Typesetting</h2>
+            <p class="pj-tagline">Mathematical derivations and proofs typeset in LaTeX.</p>
+            <span class="pj-rule" aria-hidden="true"></span>
+            <button class="btn-green pj-more" type="button" data-dialog-open="pj-latex">More Info<span class="sr-only">: LaTeX Typesetting</span></button>
+          </div>
+        </li>
+
+        <li class="pj-item" data-cats="power-bi excel" data-anim="fade-expand">
+          <div class="pj-media" data-dialog-open="pj-road-safety">
+            <img src="assets/img/road-safety.webp" alt="Power BI stacked bar chart of risk perception in campaign-aware and unaware groups by city and year" width="1199" height="671" loading="lazy" decoding="async">
+          </div>
+          <div class="pj-card">
+            <h2 class="pj-name">Behavioural Insights from WHO Road Safety Campaign</h2>
+            <p class="pj-tagline">Power BI dashboard analysing ten years of behavioural data from WHO&rsquo;s road-safety campaign in 9 Mexican cities.</p>
+            <span class="pj-rule" aria-hidden="true"></span>
+            <button class="btn-green pj-more" type="button" data-dialog-open="pj-road-safety">More Info<span class="sr-only">: Behavioural Insights from WHO Road Safety Campaign</span></button>
+          </div>
+        </li>
+
+        <li class="pj-item" data-cats="r" data-anim="fade-expand">
+          <div class="pj-media" data-dialog-open="pj-autocleanr">
+            <img src="assets/img/autocleanr.webp" alt="R Markdown code that cleans column names and builds frequency and summary tables" width="847" height="788" loading="lazy" decoding="async">
+          </div>
+          <div class="pj-card">
+            <h2 class="pj-name">AutoCleanR: Intelligent Data QA-QC Pipeline</h2>
+            <p class="pj-tagline">Automated R workflow to clean, validate, and transform large datasets with stepwise QA/QC.</p>
+            <span class="pj-rule" aria-hidden="true"></span>
+            <button class="btn-green pj-more" type="button" data-dialog-open="pj-autocleanr">More Info<span class="sr-only">: AutoCleanR: Intelligent Data QA-QC Pipeline</span></button>
+          </div>
+        </li>
+
+        <li class="pj-item" data-cats="r" data-anim="fade-expand">
+          <div class="pj-media" data-dialog-open="pj-property">
+            <img src="assets/img/property.webp" alt="R scatter plots of price per square foot by year with fitted trend lines" width="896" height="658" loading="lazy" decoding="async">
+          </div>
+          <div class="pj-card">
+            <h2 class="pj-name">Property Analysis Modelling</h2>
+            <p class="pj-tagline">Real-estate forecasting and behavioural analytics model in R, predicting property price appreciation with 87% accuracy.</p>
+            <span class="pj-rule" aria-hidden="true"></span>
+            <button class="btn-green pj-more" type="button" data-dialog-open="pj-property">More Info<span class="sr-only">: Property Analysis Modelling</span></button>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== "More Info" dialogs ===== -->
+    <dialog class="modal pj-modal" id="pj-fin-vba" aria-labelledby="pj-fin-vba-title">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="Close">&times;</button>
+      <div class="modal-card">
+        <h2 class="pj-modal-title" id="pj-fin-vba-title">Automated Financial Analysis &amp; Stakeholder Insights</h2>
+        <ul class="pj-tags" aria-label="Tools"><li>MS Excel-VBA</li></ul>
+        <figure class="pj-figure">
+          <video controls preload="none" playsinline poster="assets/img/fin-vba.webp" width="1280" height="682">
+            <source src="assets/video/excel-vba.mp4" type="video/mp4">
+            <a href="assets/video/excel-vba.mp4">Download the VBA module demo video</a>
+          </video>
+          <figcaption>Demo video (2:23) &middot; <button class="pj-textbtn" type="button" data-lightbox="assets/img/fin-vba.webp" data-alt="Excel VBA macro code beside an Aap Ka Bazar income statement and a ROCE chart with key insights" data-caption="Automated Financial Analysis &amp; Stakeholder Insights">View the screenshot full size</button></figcaption>
+        </figure>
+        <div class="pj-text">
+          <p>Built a VBA automation module that extracts key financial components directly from company financial statements and instantly computes all major financial ratios&mdash;profitability, liquidity, leverage, solvency, valuation, and efficiency metrics. The module benchmarked two companies side-by-side, generated B&ndash;factor comparisons, highlighted performance gaps, and produced an automated summary report covering risk, capital structure, operational health, and financial stability. Designed for fast, error-free financial analysis without manual computation.</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="modal pj-modal" id="pj-am" aria-labelledby="pj-am-title">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="Close">&times;</button>
+      <div class="modal-card">
+        <h2 class="pj-modal-title" id="pj-am-title">Amplitude Modulation</h2>
+        <ul class="pj-tags" aria-label="Tools"><li>Wolfram Mathematica</li></ul>
+        <div class="pj-figure">
+          <button class="pj-zoom" type="button" data-lightbox="assets/img/am-signal.webp" data-alt="Mathematica plots of an amplitude-modulated signal and its spectral lines" data-caption="Amplitude Modulation">
+            <img src="assets/img/am-signal.webp" alt="Mathematica plots of an amplitude-modulated signal and its spectral lines" width="636" height="614" loading="lazy" decoding="async">
+            <span class="pj-zoom-hint">View full size</span>
+          </button>
+        </div>
+        <div class="pj-text">
+          <ul>
+            <li>Investigated the full theoretical pipeline of amplitude modulation: carrier generation, modulating waveform synthesis, single-tone AM formation, and extension to multi-frequency audio signals.</li>
+            <li>Implemented AM mathematically using y(t) = [A + M&middot;cos(&omega;<sub>m</sub>t + &#981;)]&middot;sin(&omega;<sub>c</sub>t), focusing on the interaction between baseband and high-frequency carriers.</li>
+            <li>Applied the forward Fourier Transform to decompose the AM signal into spectral lines&mdash;carrier, upper sideband, lower sideband&mdash;and analytically derived sideband amplitudes under different modulation indices.</li>
+            <li>Used the inverse Fourier Transform to reconstruct the original AM waveform, confirming theoretical spectral symmetry and linear composition of sinusoidal components.</li>
+          </ul>
+        </div>
+        <p class="pj-links"><a class="btn-outline" href="https://github.com/Chuggu12/Amplitude-Modulation-analysis" target="_blank" rel="noopener">Code on GitHub<span class="sr-only"> (opens in a new tab)</span></a></p>
+      </div>
+    </dialog>
+
+    <dialog class="modal pj-modal" id="pj-laplace" aria-labelledby="pj-laplace-title">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="Close">&times;</button>
+      <div class="modal-card">
+        <h2 class="pj-modal-title" id="pj-laplace-title">Fundamental Solutions to Laplace Equation</h2>
+        <ul class="pj-tags" aria-label="Tools"><li>Mathematica</li></ul>
+        <div class="pj-figure">
+          <button class="pj-zoom" type="button" data-lightbox="assets/img/laplace.webp" data-alt="Mathematica code with a contour and stream plot of cos(x)·cosh(y)" data-caption="Fundamental Solutions to Laplace Equation">
+            <img src="assets/img/laplace.webp" alt="Mathematica code with a contour and stream plot of cos(x)·cosh(y)" width="602" height="571" loading="lazy" decoding="async">
+            <span class="pj-zoom-hint">View full size</span>
+          </button>
+        </div>
+        <div class="pj-text">
+          <p>A Mathematica demonstration that overlays <code>ContourPlot</code> equipotentials and <code>StreamPlot</code> flow lines for cos(x)&middot;cosh(y), illustrating how a solution of Laplace&rsquo;s equation describes electrostatics, heat transfer and fluid dynamics. Part of the Mathematica practicals collection.</p>
+        </div>
+        <p class="pj-links"><a class="btn-outline" href="https://github.com/Chuggu12/Mathematica-Practicals" target="_blank" rel="noopener">Code on GitHub<span class="sr-only"> (opens in a new tab)</span></a></p>
+      </div>
+    </dialog>
+
+    <dialog class="modal pj-modal" id="pj-surfaces" aria-labelledby="pj-surfaces-title">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="Close">&times;</button>
+      <div class="modal-card">
+        <h2 class="pj-modal-title" id="pj-surfaces-title">Mathematica Practicals: 3D Surfaces</h2>
+        <ul class="pj-tags" aria-label="Tools"><li>Mathematica</li></ul>
+        <div class="pj-figure">
+          <button class="pj-zoom" type="button" data-lightbox="assets/img/surfaces.webp" data-alt="Mathematica 3D surface plots with tangent planes and intersecting surfaces" data-caption="Mathematica Practicals: 3D Surfaces">
+            <img src="assets/img/surfaces.webp" alt="Mathematica 3D surface plots with tangent planes and intersecting surfaces" width="623" height="639" loading="lazy" decoding="async">
+            <span class="pj-zoom-hint">View full size</span>
+          </button>
+        </div>
+        <div class="pj-text">
+          <p>A collection of Mathematica notebooks from the BMATHS Calculus course plus own experiments: 18 numbered calculus practicals and 4 assignments, bisection and false-position root-finding written from scratch with iteration tables to a 10<sup>&minus;6</sup> tolerance, region plots and surface visualisations.</p>
+        </div>
+        <p class="pj-links"><a class="btn-outline" href="https://github.com/Chuggu12/Mathematica-Practicals" target="_blank" rel="noopener">Code on GitHub<span class="sr-only"> (opens in a new tab)</span></a></p>
+      </div>
+    </dialog>
+
+    <dialog class="modal pj-modal" id="pj-engagement" aria-labelledby="pj-engagement-title">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="Close">&times;</button>
+      <div class="modal-card">
+        <h2 class="pj-modal-title" id="pj-engagement-title">Engagement &amp; Strategy Mapping Dashboard</h2>
+        <ul class="pj-tags" aria-label="Tools"><li>Tableau</li></ul>
+        <div class="pj-figure">
+          <button class="pj-zoom" type="button" data-lightbox="assets/img/engagement-dashboard.webp" data-alt="Tableau bar and dot charts of engagement by account type and social platform" data-caption="Engagement &amp; Strategy Mapping Dashboard">
+            <img src="assets/img/engagement-dashboard.webp" alt="Tableau bar and dot charts of engagement by account type and social platform" width="847" height="709" loading="lazy" decoding="async">
+            <span class="pj-zoom-hint">View full size</span>
+          </button>
+        </div>
+        <div class="pj-text">
+          <p>A dynamic Tableau dashboard analysing one company&rsquo;s marketing tactics, message framings, product categories, etc.</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="modal pj-modal" id="pj-market" aria-labelledby="pj-market-title">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="Close">&times;</button>
+      <div class="modal-card">
+        <h2 class="pj-modal-title" id="pj-market-title">Interactive Dashboard for Market Behaviour</h2>
+        <ul class="pj-tags" aria-label="Tools"><li>Tableau</li><li>MS Excel</li></ul>
+        <figure class="pj-figure">
+          <video controls preload="none" playsinline poster="assets/img/market-dashboard.webp" width="1280" height="682">
+            <source src="assets/video/tableau-market.mp4" type="video/mp4">
+            <a href="assets/video/tableau-market.mp4">Download the dashboard demo video</a>
+          </video>
+          <figcaption>Demo video (1:56) &middot; <button class="pj-textbtn" type="button" data-lightbox="assets/img/market-dashboard.webp" data-alt="Tableau dashboard with a world map, a treemap of companies and bar charts of message framing and marketing tactics" data-caption="Interactive Dashboard for Market Behaviour">View the screenshot full size</button></figcaption>
+        </figure>
+        <div class="pj-text">
+          <p>Developed an advanced Tableau dashboard that automatically analyses market behaviour for any dataset uploaded into the system. The dashboard identifies key marketing tactics, message framings, product categories, and loophole-exploiting strategies used by companies. It includes dynamic, map-based visualisation that lets users click on a country to instantly view its market behaviour&mdash;total companies tracked, dominant tactics, high-engagement profiles, and recent policy-evasion trends. The dashboard updates insights in real time and serves as a rapid-analysis tool for surveillance teams (TERM), enabling consistent monitoring of marketing patterns across regions.</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="modal pj-modal" id="pj-term-qa" aria-labelledby="pj-term-qa-title">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="Close">&times;</button>
+      <div class="modal-card">
+        <h2 class="pj-modal-title" id="pj-term-qa-title">Tableau QA-QC TERM</h2>
+        <ul class="pj-tags" aria-label="Tools"><li>Tableau</li></ul>
+        <div class="pj-figure">
+          <button class="pj-zoom" type="button" data-lightbox="assets/img/term-qa.webp" data-alt="Tableau QA-QC dashboard of social-media platforms and engagement in three countries, with a map" data-caption="Tableau QA-QC TERM">
+            <img src="assets/img/term-qa.webp" alt="Tableau QA-QC dashboard of social-media platforms and engagement in three countries, with a map" width="1400" height="487" loading="lazy" decoding="async">
+            <span class="pj-zoom-hint">View full size</span>
+          </button>
+        </div>
+        <div class="pj-text">
+          <p>Your data, instantly intelligent. This isn&rsquo;t just a report &mdash; it&rsquo;s an interactive exploration.</p>
+          <p>Related code: <a href="https://github.com/Chuggu12/VITAL_STRATGIES_PAC_TOBACCO-UNIT" target="_blank" rel="noopener">the TERM data QA/QC workflow in R<span class="sr-only"> (opens in a new tab)</span></a></p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="modal pj-modal" id="pj-consumer" aria-labelledby="pj-consumer-title">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="Close">&times;</button>
+      <div class="modal-card">
+        <h2 class="pj-modal-title" id="pj-consumer-title">Consumer Engagement Measurement System</h2>
+        <ul class="pj-tags" aria-label="Tools"><li>Tableau</li><li>R</li></ul>
+        <div class="pj-figure">
+          <button class="pj-zoom" type="button" data-lightbox="assets/img/consumer-engagement.webp" data-alt="Tableau chart of average and median engagement, total posts and total engagement by account type" data-caption="Consumer Engagement Measurement System">
+            <img src="assets/img/consumer-engagement.webp" alt="Tableau chart of average and median engagement, total posts and total engagement by account type" width="1234" height="583" loading="lazy" decoding="async">
+            <span class="pj-zoom-hint">View full size</span>
+          </button>
+        </div>
+        <div class="pj-text">
+          <p>Measurement in illicit trade by quantifying consumer interaction and tactic exposure using average and median engagement.</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="modal pj-modal" id="pj-muj" aria-labelledby="pj-muj-title">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="Close">&times;</button>
+      <div class="modal-card">
+        <h2 class="pj-modal-title" id="pj-muj-title">AI Financial Document Processing (MUJ Hackathon)</h2>
+        <ul class="pj-tags" aria-label="Tools"><li>R</li><li>Tesseract OCR</li><li>magick</li><li>tidyverse</li><li>ggplot2</li><li>openxlsx</li></ul>
+        <div class="pj-figure">
+          <button class="pj-zoom" type="button" data-lightbox="assets/img/hackathon-muj.webp" data-alt="Project write-up and R code for OCR-based processing of financial documents" data-caption="AI Financial Document Processing (MUJ Hackathon)">
+            <img src="assets/img/hackathon-muj.webp" alt="Project write-up and R code for OCR-based processing of financial documents" width="750" height="542" loading="lazy" decoding="async">
+            <span class="pj-zoom-hint">View full size</span>
+          </button>
+        </div>
+        <div class="pj-text">
+          <p>A MUJ Hackathon project in R. It uses Tesseract OCR to read scanned financial documents (salary slips, Form 16/ITR, cheques and bank statements), sorts them by type with keyword rules, extracts key fields such as PAN, net pay and cheque amounts with regex, groups bank transactions into 13 categories and exports ggplot2 charts and an Excel report.</p>
+        </div>
+        <p class="pj-links"><a class="btn-outline" href="https://github.com/Chuggu12/MUJ-HACKATHON" target="_blank" rel="noopener">Code on GitHub<span class="sr-only"> (opens in a new tab)</span></a></p>
+      </div>
+    </dialog>
+
+    <dialog class="modal pj-modal" id="pj-chi-square" aria-labelledby="pj-chi-square-title">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="Close">&times;</button>
+      <div class="modal-card">
+        <h2 class="pj-modal-title" id="pj-chi-square-title">Chi-Square Module: R</h2>
+        <ul class="pj-tags" aria-label="Tools"><li>R</li></ul>
+        <div class="pj-figure">
+          <button class="pj-zoom" type="button" data-lightbox="assets/img/chi-square.webp" data-alt="R code that runs chi-square tests on platform data for India, Indonesia and Mexico" data-caption="Chi-Square Module: R">
+            <img src="assets/img/chi-square.webp" alt="R code that runs chi-square tests on platform data for India, Indonesia and Mexico" width="843" height="817" loading="lazy" decoding="async">
+            <span class="pj-zoom-hint">View full size</span>
+          </button>
+        </div>
+        <div class="pj-text">
+          <p>Manually coded chi-square engine in R for cross-country statistical validations.</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="modal pj-modal" id="pj-avg-median" aria-labelledby="pj-avg-median-title">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="Close">&times;</button>
+      <div class="modal-card">
+        <h2 class="pj-modal-title" id="pj-avg-median-title">Average vs Median Engagement</h2>
+        <ul class="pj-tags" aria-label="Tools"><li>MS Suite</li></ul>
+        <div class="pj-figure">
+          <button class="pj-zoom" type="button" data-lightbox="assets/img/avg-median.webp" data-alt="Document titled Average vs Sum of Engagement with a chart of engagement by marketing tactic" data-caption="Average vs Median Engagement">
+            <img src="assets/img/avg-median.webp" alt="Document titled Average vs Sum of Engagement with a chart of engagement by marketing tactic" width="1078" height="699" loading="lazy" decoding="async">
+            <span class="pj-zoom-hint">View full size</span>
+          </button>
+        </div>
+        <div class="pj-text">
+          <p>True engagement = total likes per post. Not all high totals mean high impact.</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="modal pj-modal" id="pj-time-series" aria-labelledby="pj-time-series-title">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="Close">&times;</button>
+      <div class="modal-card">
+        <h2 class="pj-modal-title" id="pj-time-series-title">Time Series Simulation &amp; ARIMA Forecasting</h2>
+        <ul class="pj-tags" aria-label="Tools"><li>Stata</li><li>Python</li></ul>
+        <div class="pj-figure">
+          <button class="pj-zoom" type="button" data-lightbox="assets/img/stata-ts.webp" data-alt="Stata ARIMA regression output, a random-walk plot and a Dickey-Fuller unit-root test" data-caption="Time Series Simulation &amp; ARIMA Forecasting">
+            <img src="assets/img/stata-ts.webp" alt="Stata ARIMA regression output, a random-walk plot and a Dickey-Fuller unit-root test" width="1067" height="507" loading="lazy" decoding="async">
+            <span class="pj-zoom-hint">View full size</span>
+          </button>
+        </div>
+        <div class="pj-text">
+          <p>Conducted extensive time-series simulations, generating between 10 and 10,000 realizations of Random Walk, AR(1), AR(2), MA(1), and MA(2) processes to analyse convergence behaviour, oscillation patterns, and long-run variance stability. To isolate the stochastic component of each series, I applied detrending and differencing transformations and validated stationarity using DF, ADF, and KPSS testing frameworks. I further compared linear, quadratic, and cubic deterministic trend models using AIC/BIC, empirically establishing the linear trend as the optimal specification. Using these diagnostics, I estimated multiple ARIMA configurations&mdash;(0,1,1), (1,1,0), (1,1,1), (2,1,0), and (0,1,2)&mdash;and selected the best-fit model through information criteria and residual analysis. The project also included a complete forecasting pipeline, incorporating PACF/ACF interpretation, residual validation, and visualisation of out-of-sample predictions.</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="modal pj-modal" id="pj-plfs" aria-labelledby="pj-plfs-title">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="Close">&times;</button>
+      <div class="modal-card">
+        <h2 class="pj-modal-title" id="pj-plfs-title">Demographic Modelling &amp; Dynamic LaTeX Output</h2>
+        <ul class="pj-tags" aria-label="Tools"><li>Stata</li><li>LaTeX</li></ul>
+        <div class="pj-figure">
+          <button class="pj-zoom" type="button" data-lightbox="assets/img/plfs-latex.webp" data-alt="Stata do-file that cleans and analyses PLFS 2017-18 household data" data-caption="Demographic Modelling &amp; Dynamic LaTeX Output">
+            <img src="assets/img/plfs-latex.webp" alt="Stata do-file that cleans and analyses PLFS 2017-18 household data" width="878" height="1005" loading="lazy" decoding="async">
+            <span class="pj-zoom-hint">View full size</span>
+          </button>
+        </div>
+        <div class="pj-text">
+          <p>Stata-powered PLFS analysis with auto-generated LaTeX reports and visualizations.</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="modal pj-modal" id="pj-latex" aria-labelledby="pj-latex-title">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="Close">&times;</button>
+      <div class="modal-card">
+        <h2 class="pj-modal-title" id="pj-latex-title">LaTeX Typesetting</h2>
+        <ul class="pj-tags" aria-label="Tools"><li>LaTeX</li></ul>
+        <div class="pj-figure">
+          <button class="pj-zoom" type="button" data-lightbox="assets/img/latex-proofs.webp" data-alt="Typeset LaTeX derivation of a series and product identity" data-caption="LaTeX Typesetting">
+            <img src="assets/img/latex-proofs.webp" alt="Typeset LaTeX derivation of a series and product identity" width="718" height="720" loading="lazy" decoding="async">
+            <span class="pj-zoom-hint">View full size</span>
+          </button>
+        </div>
+        <div class="pj-text">
+          <p>Mathematical derivations and proofs typeset in LaTeX.</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="modal pj-modal" id="pj-road-safety" aria-labelledby="pj-road-safety-title">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="Close">&times;</button>
+      <div class="modal-card">
+        <h2 class="pj-modal-title" id="pj-road-safety-title">Behavioural Insights from WHO Road Safety Campaign</h2>
+        <ul class="pj-tags" aria-label="Tools"><li>Power BI</li><li>Excel</li></ul>
+        <div class="pj-figure">
+          <button class="pj-zoom" type="button" data-lightbox="assets/img/road-safety.webp" data-alt="Power BI stacked bar chart of risk perception in campaign-aware and unaware groups by city and year" data-caption="Behavioural Insights from WHO Road Safety Campaign">
+            <img src="assets/img/road-safety.webp" alt="Power BI stacked bar chart of risk perception in campaign-aware and unaware groups by city and year" width="1199" height="671" loading="lazy" decoding="async">
+            <span class="pj-zoom-hint">View full size</span>
+          </button>
+        </div>
+        <div class="pj-text">
+          <p>An advanced Power BI dashboard to analyse ten years of qualitative and behavioural data from WHO&rsquo;s Road Safety Campaign conducted across 9 major Mexican cities. The project involved studying household- and community-level behavioural responses, perception shifts, and campaign effectiveness over time. Using Power BI&rsquo;s data-modelling and interactive-visualisation capabilities, I transformed raw qualitative inputs into structured behavioural indicators&mdash;attitude shifts, risk perceptions, compliance patterns, and demographic-based differences. The dashboard features drill-down city-level comparisons, behavioural segmentation, temporal trend analysis, and clustering of households based on safety awareness and policy responsiveness, measuring which campaign messages resulted in measurable shifts in public awareness. Final insights and visual reports were prepared for policy partners, enabling evidence-based refinement of future road-safety interventions.</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="modal pj-modal" id="pj-autocleanr" aria-labelledby="pj-autocleanr-title">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="Close">&times;</button>
+      <div class="modal-card">
+        <h2 class="pj-modal-title" id="pj-autocleanr-title">AutoCleanR: Intelligent Data QA-QC Pipeline</h2>
+        <ul class="pj-tags" aria-label="Tools"><li>R</li></ul>
+        <div class="pj-figure">
+          <button class="pj-zoom" type="button" data-lightbox="assets/img/autocleanr.webp" data-alt="R Markdown code that cleans column names and builds frequency and summary tables" data-caption="AutoCleanR: Intelligent Data QA-QC Pipeline">
+            <img src="assets/img/autocleanr.webp" alt="R Markdown code that cleans column names and builds frequency and summary tables" width="847" height="788" loading="lazy" decoding="async">
+            <span class="pj-zoom-hint">View full size</span>
+          </button>
+        </div>
+        <div class="pj-text">
+          <p>Automated R workflow to clean, validate, and transform large datasets with stepwise QA/QC.</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="modal pj-modal" id="pj-property" aria-labelledby="pj-property-title">
+      <button class="dialog-close" type="button" data-dialog-close aria-label="Close">&times;</button>
+      <div class="modal-card">
+        <h2 class="pj-modal-title" id="pj-property-title">Property Analysis Modelling</h2>
+        <ul class="pj-tags" aria-label="Tools"><li>R</li><li>Python</li></ul>
+        <div class="pj-figure">
+          <button class="pj-zoom" type="button" data-lightbox="assets/img/property.webp" data-alt="R scatter plots of price per square foot by year with fitted trend lines" data-caption="Property Analysis Modelling">
+            <img src="assets/img/property.webp" alt="R scatter plots of price per square foot by year with fitted trend lines" width="896" height="658" loading="lazy" decoding="async">
+            <span class="pj-zoom-hint">View full size</span>
+          </button>
+        </div>
+        <div class="pj-text">
+          <p>I developed a real estate forecasting and behavioural analytics model in R using basic packages to predict property price appreciation with an accuracy of 87%, enabling more informed investment decisions. The project included building income-tier&ndash;based behavioural segments to understand consumer affordability, spending capacity, and preference patterns across market categories. I integrated the full analysis into clear visual dashboards and published the reproducible codebase on GitHub, supporting data-driven decision-making for strategic property investment and market evaluation.</p>
+        </div>
+        <p class="pj-links"><a class="btn-outline" href="https://github.com/Chuggu12/Property-Analysis" target="_blank" rel="noopener">Code on GitHub<span class="sr-only"> (opens in a new tab)</span></a></p>
+      </div>
+    </dialog>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span data-year>2026</span> Ankit Anand &middot; <a href="mailto:ankitanand_23mae04@dtu.ac.in">ankitanand_23mae04@dtu.ac.in</a> &middot; <a href="https://github.com/Chuggu12" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+
+  <script>
+    /* Projects page extras (main.js does the filtering and the live count itself):
+       - toolbar keyboard support (one tab stop, arrow keys / Home / End);
+       - when the tabs overflow (phones): fades the bar's edges and scrolls the chosen filter into view. */
+    (function () {
+      var bar = document.querySelector(".pj-filters");
+      var list = document.getElementById("project-list");
+      if (!bar || !list) return;
+      var buttons = Array.prototype.slice.call(bar.querySelectorAll("[data-filter]"));
+      var smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var rove = function (on) { buttons.forEach(function (b) { b.tabIndex = b === on ? 0 : -1; }); };
+      rove(bar.querySelector('[aria-pressed="true"]') || buttons[0]);
+      var fit = function () { bar.classList.toggle("is-scrollable", bar.scrollWidth > bar.clientWidth + 1); };
+      fit();
+      window.addEventListener("resize", fit);
+      if (document.fonts) document.fonts.ready.then(fit);
+
+      bar.addEventListener("click", function (e) {
+        var btn = e.target.closest("[data-filter]");
+        if (!btn) return;
+        rove(btn);
+        if (bar.scrollWidth > bar.clientWidth) {
+          bar.scrollTo({ left: btn.offsetLeft - (bar.clientWidth - btn.offsetWidth) / 2, behavior: smooth ? "smooth" : "auto" });
+        }
+      });
+
+      bar.addEventListener("keydown", function (e) {
+        var i = buttons.indexOf(document.activeElement);
+        if (i < 0) return;
+        var last = buttons.length - 1;
+        var j = e.key === "ArrowRight" ? (i === last ? 0 : i + 1)
+          : e.key === "ArrowLeft" ? (i === 0 ? last : i - 1)
+          : e.key === "Home" ? 0
+          : e.key === "End" ? last : -1;
+        if (j < 0) return;
+        e.preventDefault();
+        rove(buttons[j]);
+        buttons[j].focus();
+      });
+    })();
+  </script>
+</body>
+</html>

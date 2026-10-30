@@ -1,0 +1,228 @@
+/* =========================================================
+   ARTICLES & PUBLICATIONS PAGE (articles.html)
+   Wix "portfolio" page: spaced Lulo heading, "MY LATEST WORK", then a 980×655 slideshow
+   with two slides (peach text panel + abstract image, sage text panel + study image).
+   Wix slide change: the new slide drops in from the top while the old one leaves through
+   the bottom, 1000ms, cubic-bezier(.87,0,.13,1). Below it, the peer-reviewed paper in the
+   home page's "Thesis & Publication" style.
+   ========================================================= */
+
+.art-page {
+  /* panel colours read from the Wix slides */
+  --peach: #e3c5ad;   /* rgb(227, 197, 173) */
+  --sage: #c0d8c4;    /* rgb(192, 216, 196) */
+  --brown: #431701;   /* slide 1 title */
+  --bark: #5a2b1c;    /* slide 1 accent (Wix vector colour) */
+  --forest: #052313;  /* slide 2 title + text */
+  --ease-slide: cubic-bezier(.87, 0, .13, 1);
+  padding-bottom: 104px;
+}
+
+/* ---------- Heading ---------- */
+.art-intro { padding: 60px 16px 72px; text-align: center; }
+/* Unbounded at the .lulo spacing (.14em) gives the Wix ink width (842px at 42px) */
+.art-title { font-size: clamp(24px, 4.7vw, 42px); line-height: 1.4; color: #fff; text-wrap: balance; }
+.art-sub {
+  margin-top: 24px; --delay: .25s;
+  font: 300 20px/1.4 var(--f-avenir); letter-spacing: 0; text-transform: uppercase; color: #fff;
+}
+
+/* ---------- Slideshow ---------- */
+.art-carousel { position: relative; width: min(980px, 100% - 32px); margin: 0 auto; }
+
+/* all slides share one grid cell, so the stage is as tall as the tallest slide */
+.art-slides { display: grid; min-height: 655px; overflow: hidden; }
+.art-slide {
+  grid-area: 1 / 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas: "copy media"; align-items: start;
+  align-content: start; /* a shorter slide keeps its spare height at the bottom, not between rows */
+}
+.art-slide--csr { background: var(--peach); }
+.art-slide--bihar { background: var(--sage); grid-template-areas: "media copy"; }
+.art-copy { grid-area: copy; min-width: 0; }
+
+/* inactive slides stay in the cell (no height jump) but out of sight; the one being left
+   slides down and out, then turns invisible */
+.art-page .art-slide[hidden] {
+  visibility: hidden; transform: translateY(calc(100% + 1px)); animation: none;
+  transition: transform 1s var(--ease-slide), visibility 0s linear 1s;
+}
+/* first view keeps the data-anim fade; every change after that is the Wix vertical slide */
+.art-page .art-slides:has(> .art-slide[hidden].is-in) > .art-slide.is-in:not([hidden]) {
+  animation: art-slide-in 1s var(--ease-slide) both;
+}
+@keyframes art-slide-in { from { transform: translateY(-100%); } to { transform: none; } }
+
+/* slide 1: peach text panel on the left, abstract image on the right */
+.art-slide--csr .art-copy { padding: 15px 8px 32px 20px; }
+.art-eyebrow {
+  margin-left: 7px; font: 700 11px/16px var(--f-avenir); letter-spacing: .16em;
+  text-transform: uppercase; color: var(--bark);
+}
+.art-slide--csr .art-slide-title {
+  max-width: 465px; min-height: 130px; margin: 2px 0 -15px 7px; padding-top: 2px;
+  font: 700 44px/42px var(--f-helv); letter-spacing: -.03em; color: var(--brown);
+}
+.art-slide--csr .art-text { max-width: 444px; font: 300 15px/21px var(--f-avenir); color: var(--charcoal); }
+
+/* slide 2: study image on the left, sage text panel on the right */
+.art-slide--bihar .art-copy { padding: 30px 24px 40px 30px; }
+.art-slide--bihar .art-slide-title {
+  max-width: 354px; min-height: 130px; margin-bottom: 13px;
+  font: 400 29px/28px var(--f-helv); letter-spacing: -.03em; color: var(--forest);
+}
+.art-slide--bihar .art-text {
+  max-width: 387px; margin-left: 6px;
+  font: 300 21px/21px var(--f-avenir); letter-spacing: -.03em; color: var(--forest);
+}
+.art-slide--bihar .art-text p + p { margin-top: 19px; }
+
+/* slide images open in the lightbox */
+.art-media {
+  grid-area: media; position: relative; display: block; width: 100%; aspect-ratio: 490 / 597;
+  padding: 0; border: 0; overflow: hidden; background: #fff; cursor: zoom-in;
+}
+.art-slide--bihar .art-media { aspect-ratio: 490 / 616; }
+.art-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease-wix); }
+.art-media:hover img { transform: scale(1.035); }
+.art-media:focus-visible { outline-offset: -5px; }
+
+.art-zoom {
+  position: absolute; right: 14px; bottom: 14px; display: grid; place-items: center;
+  width: 40px; height: 40px; border-radius: 50%; background: rgba(9, 19, 48, .74); color: #fff;
+  opacity: 0; transform: scale(.75);
+  transition: opacity .3s ease, transform .4s var(--ease-wix), background-color .3s ease, color .3s ease;
+}
+.art-media:hover .art-zoom, .art-media:focus-visible .art-zoom,
+.art-pub-preview:hover .art-zoom { opacity: 1; transform: none; }
+.art-media:hover .art-zoom, .art-pub-preview:hover .art-zoom { background: var(--green); color: #0b1330; }
+
+/* controls: Wix dots inside the card; arrows (hidden on Wix) sit outside it on wide screens */
+.art-controls { position: absolute; inset: 0; pointer-events: none; }
+.art-controls > * { pointer-events: auto; }
+.art-dots { position: absolute; left: 50%; bottom: 23px; display: flex; transform: translate(-50%, 50%); }
+.art-dot {
+  display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 0;
+  background: none; cursor: pointer; /* 7px dot, 24px target (WCAG 2.5.8) */
+}
+.art-dot::before {
+  content: ""; width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(255, 255, 255, .65); box-shadow: 0 0 0 1px rgba(0, 0, 0, .22);
+  transition: background-color .3s ease, transform .3s var(--ease-wix);
+}
+.art-dot[aria-current="true"]::before { background: #fff; transform: scale(1.2); box-shadow: 0 0 0 1px rgba(0, 0, 0, .4); }
+.art-dot:hover::before { background: var(--green); transform: scale(1.35); }
+
+.art-arrow {
+  position: absolute; top: 50%; display: grid; place-items: center;
+  width: 44px; height: 44px; margin-top: -22px; padding: 0; border-radius: 50%; cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, .35); background: transparent; color: #fff;
+  transition: border-color .3s ease, background-color .3s ease, color .3s ease, transform .35s var(--ease-wix);
+}
+.art-prev { right: calc(100% + 26px); }
+.art-next { left: calc(100% + 26px); }
+.art-arrow:hover { border-color: var(--green); background: rgba(0, 214, 70, .12); color: var(--green); }
+.art-prev:hover { transform: translateX(-3px); }
+.art-next:hover { transform: translateX(3px); }
+
+/* without JavaScript there is no rotation: show every slide, one under the other */
+html:not(.js) .art-controls { display: none; }
+html:not(.js) .art-slides { display: block; min-height: 0; }
+html:not(.js) .art-slide[hidden] { visibility: visible; transform: none; transition: none; }
+
+/* ---------- Peer-reviewed publication ---------- */
+.art-pub { width: min(980px, 100% - 32px); margin: 96px auto 0; }
+.art-pub-heading {
+  position: relative; padding-bottom: 18px; margin-bottom: 34px; text-align: center;
+  font-size: clamp(19px, 4.4vw, 30px); letter-spacing: .2em; color: #fff; text-wrap: balance;
+}
+.art-pub-heading::after {
+  content: ""; position: absolute; left: 50%; bottom: 0; width: 56px; height: 2px; margin-left: -28px;
+  background: var(--green);
+}
+.art-pub-card {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); min-height: 460px;
+  background: var(--charcoal); color: #cfcfcf;
+  transition: translate .5s var(--ease-wix), box-shadow .5s ease;
+}
+.art-pub-card:hover { translate: 0 -4px; box-shadow: 0 22px 48px rgba(0, 0, 0, .35); }
+.art-pub-body { padding: 46px 46px 44px; }
+.art-pub-title { font: 700 26px/1.25 var(--f-avenir); color: #1fdc63; }
+.art-pub-title a {
+  color: inherit; text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat;
+  transition: background-size .45s var(--ease-wix);
+}
+.art-pub-title a:hover, .art-pub-title a:focus-visible { background-size: 100% 2px; }
+.art-pub-meta { margin-top: 20px; font: 800 16px/1.4 var(--f-avenir); color: #c9f5d6; }
+.art-pub-meta b { color: var(--green); }
+.art-pub-cite { margin-top: 6px; font: 400 14px/1.5 var(--f-avenir); color: #a3abbb; }
+.art-pub-authors { margin-top: 22px; font: 400 15px/1.6 var(--f-avenir); color: #d9dde5; }
+.art-pub-label {
+  display: block; margin-bottom: 4px; font: 700 11px/1.4 var(--f-avenir); letter-spacing: .16em;
+  text-transform: uppercase; color: var(--olive);
+}
+.art-pub-authors strong { font-weight: 800; color: #fff; }
+.art-pub-summary { margin-top: 20px; font: 400 17px/1.55 var(--f-futura); color: #cfcfcf; }
+.art-pub-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+.art-pub-actions .btn-green, .art-pub-actions .btn-outline {
+  gap: 10px; min-width: 0; height: 46px; padding: 0 22px;
+  font: 700 13px/1 var(--f-avenir); letter-spacing: .1em; text-transform: uppercase;
+}
+.art-pub-actions .btn-green { color: #0b1330; transition: background-color .3s ease, translate .3s var(--ease-wix); }
+.art-pub-actions .btn-green:hover { translate: 0 -2px; }
+.art-pub-actions .btn-green svg { transition: transform .3s var(--ease-wix); }
+.art-pub-actions .btn-green:hover svg { transform: translate(2px, -2px); }
+
+.art-pub-preview { position: relative; overflow: hidden; background: #fff; cursor: zoom-in; }
+.art-pub-preview img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: left top; transition: transform 6s linear;
+}
+.art-pub-preview:hover img { transform: scale(1.06) translateY(-4%); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1119px) {
+  /* no room beside the card: arrows join the dots in a row along its bottom edge */
+  .art-controls { inset: auto 0 12px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .art-dots { position: static; transform: none; }
+  .art-arrow { position: static; width: 36px; height: 36px; margin: 0; border-color: transparent; background: rgba(9, 19, 48, .62); }
+  .art-arrow:hover { border-color: transparent; background: var(--green); color: #0b1330; }
+  .art-slide--csr .art-copy, .art-slide--bihar .art-copy { padding-bottom: 68px; }
+}
+
+@media (max-width: 859px) {
+  .art-intro { padding: 40px 16px 44px; }
+  .art-sub { margin-top: 14px; font-size: 17px; }
+
+  /* stacked slide: image on top, text below */
+  .art-slides { min-height: 0; }
+  .art-slide, .art-slide--bihar { grid-template-columns: minmax(0, 1fr); grid-template-areas: "media" "copy"; }
+  .art-media, .art-slide--bihar .art-media { aspect-ratio: 4 / 3; }
+  .art-media img { object-position: 50% 0; }
+  .art-zoom { opacity: .9; transform: none; }
+  .art-slide--csr .art-copy, .art-slide--bihar .art-copy { padding: 22px 20px 72px; }
+  .art-eyebrow { margin-left: 0; }
+  .art-slide--csr .art-slide-title {
+    min-height: 0; margin: 6px 0 14px; padding-top: 0;
+    font-size: clamp(28px, 8vw, 38px); line-height: 1;
+  }
+  .art-slide--bihar .art-slide-title { min-height: 0; margin-bottom: 14px; font-size: clamp(23px, 6.4vw, 29px); line-height: 1.05; }
+  .art-slide--bihar .art-text { margin-left: 0; font-size: 18px; line-height: 1.3; letter-spacing: -.01em; }
+  .art-slide--bihar .art-text p + p { margin-top: 14px; }
+  .art-slide--csr .art-text { font-size: 15.5px; line-height: 1.5; }
+  .art-slide--csr .art-text p + p { margin-top: 10px; }
+
+  .art-pub { margin-top: 72px; }
+  .art-pub-heading { margin-bottom: 26px; letter-spacing: .14em; }
+  .art-pub-card { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .art-pub-body { padding: 30px 22px 32px; }
+  .art-pub-title { font-size: 22px; }
+  .art-pub-summary { font-size: 16px; }
+  .art-pub-actions .btn-green, .art-pub-actions .btn-outline { flex: 1 1 200px; }
+  .art-pub-preview { height: 260px; }
+}
+
+@media (hover: none) {
+  .art-zoom { opacity: .9; transform: none; }
+}

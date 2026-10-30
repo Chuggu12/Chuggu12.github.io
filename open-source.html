@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open Source | Ankit Anand</title>
+  <meta name="description" content="Open-source work by Ankit Anand, economist and mathematician: public GitHub repositories in R, Python, SQL and Mathematica, from hackathon prototypes and data QA/QC pipelines to economics analyses and maths coursework.">
+  <meta name="theme-color" content="#0a1431">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Barlow:wght@300;400;500&family=Jost:wght@300;400;500;600&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600;6..12,700;6..12,800;6..12,900&family=Playfair+Display:wght@700;800;900&family=Poppins:wght@500;600;700&family=Sedgwick+Ave+Display&family=Unbounded:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/open-source.css">
+  <script>document.documentElement.classList.add("js");setTimeout(function(){if(!window.__siteReady)document.documentElement.classList.remove("js")},3000);</script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html" aria-label="Ankit Anand, home"><img src="assets/img/logo.webp" alt="Ankit Anand" width="273" height="40"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="articles.html">Article &amp; Publications</a>
+        <a href="open-source.html" aria-current="page">Open Source</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="os-page">
+    <svg class="icon-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+      <symbol id="i-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></symbol>
+      <symbol id="i-external" viewBox="0 0 16 16"><path d="M9.5 2.5h4v4M13.5 2.5 7.5 8.5M11.5 9.5v3a1 1 0 0 1-1 1h-7a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    </svg>
+
+    <!-- ===== Heading + contribution snake (as on the Wix page) ===== -->
+    <section class="os-head" aria-labelledby="os-title">
+      <h1 id="os-title" class="lulo os-title" data-anim="reveal-in">Open Source Contribution</h1>
+      <div class="os-snake" data-anim="fade-in" style="--delay:.3s">
+        <img class="snake" src="assets/img/snake.svg" width="880" height="192" alt="Animated snake eating the GitHub contribution graph">
+      </div>
+    </section>
+
+    <!-- ===== Repositories (replaces the Wix "COMING SOON..." line) ===== -->
+    <section class="os-repos" aria-labelledby="repos-title">
+      <h2 id="repos-title" class="os-kicker" data-anim="float-in" style="--delay:.45s">My Repositories</h2>
+      <p class="os-intro" data-anim="fade-in" style="--delay:.6s">Code from hackathons, internship QA/QC work, economics analyses and mathematics coursework.</p>
+
+      <ul class="repo-grid" role="list">
+        <!-- 1. Rozi -->
+        <li data-anim="fade-expand" style="--delay:.25s">
+          <article class="repo-card" aria-labelledby="t-rozi">
+            <div class="repo-thumb"><img src="assets/img/rozi.webp" width="1280" height="800" alt="Rozi app welcome screen with language, work type and daily goal fields" decoding="async"></div>
+            <div class="repo-body">
+              <h3 class="repo-title" id="t-rozi">Rozi: GenAI Gig Worker Companion</h3>
+              <p class="repo-summary">A multilingual, mobile-first web app (PWA) for gig and informal workers in India, with Gemini handling translation and simplification.</p>
+              <ul class="repo-tags" aria-label="Tools">
+                <li>Python</li><li>FastAPI</li><li>Google Gemini API</li><li>JavaScript</li><li class="more">+6<span class="sr-only"> more</span></li>
+              </ul>
+              <div class="repo-foot">
+                <button class="btn-green repo-btn" type="button" data-dialog-open="repo-rozi" aria-haspopup="dialog">Details<span class="sr-only"> about Rozi: GenAI Gig Worker Companion</span></button>
+                <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/PrompTwars_CHD_GIG_wrkrs" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>Code<span class="sr-only"> for Rozi on GitHub (opens in a new tab)</span></a>
+                <a class="btn-outline repo-btn" href="https://promptwars-peach.vercel.app" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-external"/></svg>Live demo<span class="sr-only"> of Rozi (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <!-- 2. SAFAR -->
+        <li data-anim="fade-expand" style="--delay:.33s">
+          <article class="repo-card" aria-labelledby="t-safar">
+            <div class="repo-thumb"><img src="assets/img/art-safar.svg" width="800" height="500" alt="Illustration of a road accident-risk map" decoding="async"></div>
+            <div class="repo-body">
+              <h3 class="repo-title" id="t-safar">SAFAR: AI Road Safety Prototype</h3>
+              <p class="repo-summary">A team hackathon prototype in R for SAFAR (Smart AI for Accident Reduction), a road safety system for India.</p>
+              <ul class="repo-tags" aria-label="Tools">
+                <li>R</li><li>Shiny</li><li>Leaflet</li><li>XGBoost</li><li class="more">+4<span class="sr-only"> more</span></li>
+              </ul>
+              <div class="repo-foot">
+                <button class="btn-green repo-btn" type="button" data-dialog-open="repo-safar" aria-haspopup="dialog">Details<span class="sr-only"> about SAFAR: AI Road Safety Prototype</span></button>
+                <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/HACKATHON_NIT_ROURKELA" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>Code<span class="sr-only"> for SAFAR on GitHub (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <!-- 3. MUJ hackathon -->
+        <li data-anim="fade-expand" style="--delay:.41s">
+          <article class="repo-card" aria-labelledby="t-muj">
+            <div class="repo-thumb"><img src="assets/img/hackathon-muj.webp" width="750" height="542" alt="Write-up and R code excerpts from the financial document processing project" decoding="async" style="--pos:50% 0"></div>
+            <div class="repo-body">
+              <h3 class="repo-title" id="t-muj">AI Financial Document Processing System</h3>
+              <p class="repo-summary">A MUJ Hackathon project in R that uses Tesseract OCR to read scanned financial documents, sort them by type and extract key fields.</p>
+              <ul class="repo-tags" aria-label="Tools">
+                <li>R</li><li>Tesseract OCR</li><li>tidyverse</li><li>ggplot2</li><li class="more">+3<span class="sr-only"> more</span></li>
+              </ul>
+              <div class="repo-foot">
+                <button class="btn-green repo-btn" type="button" data-dialog-open="repo-muj" aria-haspopup="dialog">Details<span class="sr-only"> about AI Financial Document Processing System</span></button>
+                <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/MUJ-HACKATHON" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>Code<span class="sr-only"> for the financial document processing system on GitHub (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <!-- 4. Tobacco marketing QA/QC -->
+        <li data-anim="fade-expand">
+          <article class="repo-card" aria-labelledby="t-tobacco">
+            <div class="repo-thumb"><img src="assets/img/term-qa.webp" width="1400" height="487" alt="Dashboard charts of social media engagement by platform, account type and marketing tactic in three countries" loading="lazy" decoding="async"></div>
+            <div class="repo-body">
+              <h3 class="repo-title" id="t-tobacco">Tobacco Marketing Data QA/QC</h3>
+              <p class="repo-summary">Work from a PAC internship with Vital Strategies' tobacco unit: an R Markdown QA/QC workflow for India TERM data on tobacco marketing.</p>
+              <ul class="repo-tags" aria-label="Tools">
+                <li>R</li><li>R Markdown</li><li>Excel</li>
+              </ul>
+              <div class="repo-foot">
+                <button class="btn-green repo-btn" type="button" data-dialog-open="repo-tobacco" aria-haspopup="dialog">Details<span class="sr-only"> about Tobacco Marketing Data QA/QC</span></button>
+                <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/VITAL_STRATGIES_PAC_TOBACCO-UNIT" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>Code<span class="sr-only"> for Tobacco Marketing Data QA/QC on GitHub (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <!-- 5. Foreign aid DEA panel -->
+        <li data-anim="fade-expand" style="--delay:.08s">
+          <article class="repo-card" aria-labelledby="t-aid">
+            <div class="repo-thumb"><img src="assets/img/art-aid.svg" width="800" height="500" alt="Illustration of a data-coverage heatmap" loading="lazy" decoding="async"></div>
+            <div class="repo-body">
+              <h3 class="repo-title" id="t-aid">Foreign Aid DEA Panel QA-QC</h3>
+              <p class="repo-summary">An R pipeline that builds a panel dataset for 36 African countries for Data Envelopment Analysis of foreign aid efficiency.</p>
+              <ul class="repo-tags" aria-label="Tools">
+                <li>R</li><li>R Markdown</li><li>tidyr</li><li>naniar</li><li class="more">+4<span class="sr-only"> more</span></li>
+              </ul>
+              <div class="repo-foot">
+                <button class="btn-green repo-btn" type="button" data-dialog-open="repo-aid" aria-haspopup="dialog">Details<span class="sr-only"> about Foreign Aid DEA Panel QA-QC</span></button>
+                <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/FOREGIN_AID_DMUS_QA-QC" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>Code<span class="sr-only"> for Foreign Aid DEA Panel QA-QC on GitHub (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <!-- 6. Property analysis -->
+        <li data-anim="fade-expand" style="--delay:.16s">
+          <article class="repo-card" aria-labelledby="t-property">
+            <div class="repo-thumb"><img src="assets/img/property.webp" width="896" height="658" alt="Scatter plots of price per square foot over time with regression lines by number of bedrooms" loading="lazy" decoding="async" style="--pos:50% 0"></div>
+            <div class="repo-body">
+              <h3 class="repo-title" id="t-property">Optimal Property Location Analysis</h3>
+              <p class="repo-summary">An R analysis of residential property sales that looks for the best locations and times to buy, using a price-per-square-foot measure and regression.</p>
+              <ul class="repo-tags" aria-label="Tools">
+                <li>R</li><li>ggplot2</li><li>dplyr</li><li>lubridate</li><li class="more">+2<span class="sr-only"> more</span></li>
+              </ul>
+              <div class="repo-foot">
+                <button class="btn-green repo-btn" type="button" data-dialog-open="repo-property" aria-haspopup="dialog">Details<span class="sr-only"> about Optimal Property Location Analysis</span></button>
+                <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/Property-Analysis" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>Code<span class="sr-only"> for Optimal Property Location Analysis on GitHub (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <!-- 7. NIFTY 500 -->
+        <li data-anim="fade-expand">
+          <article class="repo-card" aria-labelledby="t-nifty">
+            <div class="repo-thumb"><img src="assets/img/art-nifty.svg" width="800" height="500" alt="Illustration of a candlestick stock chart" loading="lazy" decoding="async"></div>
+            <div class="repo-body">
+              <h3 class="repo-title" id="t-nifty">NIFTY 500 Stock Price Analysis</h3>
+              <p class="repo-summary">An R analysis of NIFTY 500 company stock prices from 2019 to 2022, using descriptive statistics to look at skewness and volatility.</p>
+              <ul class="repo-tags" aria-label="Tools">
+                <li>R</li><li>tidyverse</li><li>dplyr</li><li>ggplot2</li><li>lubridate</li>
+              </ul>
+              <div class="repo-foot">
+                <button class="btn-green repo-btn" type="button" data-dialog-open="repo-nifty" aria-haspopup="dialog">Details<span class="sr-only"> about NIFTY 500 Stock Price Analysis</span></button>
+                <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/NIFTY-500" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>Code<span class="sr-only"> for NIFTY 500 Stock Price Analysis on GitHub (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <!-- 8. CPI and WPI -->
+        <li data-anim="fade-expand" style="--delay:.08s">
+          <article class="repo-card" aria-labelledby="t-inflation">
+            <div class="repo-thumb"><img src="assets/img/art-inflation.svg" width="800" height="500" alt="Illustration of CPI and WPI index lines" loading="lazy" decoding="async"></div>
+            <div class="repo-body">
+              <h3 class="repo-title" id="t-inflation">CPI and WPI Inflation Analysis</h3>
+              <p class="repo-summary">A SQL analysis of India's 2023 Wholesale Price Index (April to September) and Consumer Price Index (July to August).</p>
+              <ul class="repo-tags" aria-label="Tools">
+                <li>SQL</li><li>MySQL</li>
+              </ul>
+              <div class="repo-foot">
+                <button class="btn-green repo-btn" type="button" data-dialog-open="repo-inflation" aria-haspopup="dialog">Details<span class="sr-only"> about CPI and WPI Inflation Analysis</span></button>
+                <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/CPI-and-WPI-Analysis" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>Code<span class="sr-only"> for CPI and WPI Inflation Analysis on GitHub (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <!-- 9. Amplitude modulation -->
+        <li data-anim="fade-expand" style="--delay:.16s">
+          <article class="repo-card" aria-labelledby="t-am">
+            <div class="repo-thumb"><img src="assets/img/am-signal.webp" width="636" height="614" alt="Mathematica plots of an amplitude-modulated wave and its spectrum" loading="lazy" decoding="async" style="--pos:50% 35%"></div>
+            <div class="repo-body">
+              <h3 class="repo-title" id="t-am">Amplitude Modulation Analysis</h3>
+              <p class="repo-summary">A Wolfram Mathematica notebook on the theory of amplitude modulation, covering carrier, modulating and modulated signals.</p>
+              <ul class="repo-tags" aria-label="Tools">
+                <li>Mathematica</li>
+              </ul>
+              <div class="repo-foot">
+                <button class="btn-green repo-btn" type="button" data-dialog-open="repo-am" aria-haspopup="dialog">Details<span class="sr-only"> about Amplitude Modulation Analysis</span></button>
+                <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/Amplitude-Modulation-analysis" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>Code<span class="sr-only"> for Amplitude Modulation Analysis on GitHub (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <!-- 10. Mathematica practicals -->
+        <li data-anim="fade-expand">
+          <article class="repo-card" aria-labelledby="t-practicals">
+            <div class="repo-thumb"><img src="assets/img/laplace.webp" width="602" height="571" alt="Mathematica contour and stream plot of a Laplace equation solution" loading="lazy" decoding="async" style="--pos:50% 100%"></div>
+            <div class="repo-body">
+              <h3 class="repo-title" id="t-practicals">Mathematica Calculus and Numerical Practicals</h3>
+              <p class="repo-summary">Mathematica notebooks and PDF exports from the BMATHS Calculus course: calculus practicals, root-finding assignments and a Laplace equation visualisation.</p>
+              <ul class="repo-tags" aria-label="Tools">
+                <li>Mathematica</li>
+              </ul>
+              <div class="repo-foot">
+                <button class="btn-green repo-btn" type="button" data-dialog-open="repo-practicals" aria-haspopup="dialog">Details<span class="sr-only"> about Mathematica Calculus and Numerical Practicals</span></button>
+                <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/Mathematica-Practicals" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>Code<span class="sr-only"> for Mathematica Calculus and Numerical Practicals on GitHub (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <!-- 11. Conic shapes -->
+        <li data-anim="fade-expand" style="--delay:.08s">
+          <article class="repo-card" aria-labelledby="t-conics">
+            <div class="repo-thumb"><img src="assets/img/art-conics.svg" width="800" height="500" alt="Illustration of conic sections" loading="lazy" decoding="async"></div>
+            <div class="repo-body">
+              <h3 class="repo-title" id="t-conics">Conic Shapes Drawing Module</h3>
+              <p class="repo-summary">A Python module that draws conic sections and other mathematical curves with the turtle graphics library.</p>
+              <ul class="repo-tags" aria-label="Tools">
+                <li>Python</li><li>turtle graphics</li><li>GitHub Actions</li>
+              </ul>
+              <div class="repo-foot">
+                <button class="btn-green repo-btn" type="button" data-dialog-open="repo-conics" aria-haspopup="dialog">Details<span class="sr-only"> about Conic Shapes Drawing Module</span></button>
+                <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/CONIC_SHAPES" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>Code<span class="sr-only"> for Conic Shapes Drawing Module on GitHub (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </article>
+        </li>
+      </ul>
+
+      <p class="os-cta" data-anim="float-in">
+        <a class="btn-green os-all" href="https://github.com/Chuggu12" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>View all on GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+      </p>
+    </section>
+
+    <!-- ===== Repository details dialogs (opened by the "Details" buttons) ===== -->
+    <dialog id="repo-rozi" class="modal" aria-labelledby="d-rozi">
+      <div class="modal-card repo-modal">
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Close" autofocus>&times;</button>
+        <p class="repo-modal-kicker">GitHub repository</p>
+        <h2 class="repo-modal-title" id="d-rozi">Rozi: GenAI Gig Worker Companion</h2>
+        <p class="repo-modal-summary">Rozi is a multilingual, mobile-first web app (PWA) for gig and informal workers in India. It covers earnings tracking, safety alerts, welfare-scheme awareness, document help and grievance-letter drafting. Gemini handles translation and simplification, while all calculations run in deterministic Python.</p>
+        <h3>Highlights</h3>
+        <ul class="repo-points">
+          <li>Supports English, Hindi, Tamil and Punjabi, with source-cited JSON data on welfare schemes (e-Shram, PM-JAY, PMSBY), helplines and legal references</li>
+          <li>Gemini model-failover chain with a deterministic fallback for every AI feature, plus guards that reject AI output adding rupee figures or links</li>
+          <li>PII redaction (Aadhaar/PAN/phone) on both client and server, CSP headers and rate limiting; personal data is kept only in the browser</li>
+        </ul>
+        <h3>Built with</h3>
+        <ul class="repo-tags" aria-label="Tools">
+          <li>Python</li><li>FastAPI</li><li>Pydantic</li><li>Jinja2</li><li>httpx</li><li>JavaScript</li><li>HTML</li><li>CSS</li><li>Google Gemini API</li><li>Open-Meteo API</li>
+        </ul>
+        <div class="repo-modal-links">
+          <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/PrompTwars_CHD_GIG_wrkrs" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>View code<span class="sr-only"> on GitHub (opens in a new tab)</span></a>
+          <a class="btn-outline repo-btn" href="https://promptwars-peach.vercel.app" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-external"/></svg>Live demo<span class="sr-only"> (opens in a new tab)</span></a>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="repo-safar" class="modal" aria-labelledby="d-safar">
+      <div class="modal-card repo-modal">
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Close" autofocus>&times;</button>
+        <p class="repo-modal-kicker">GitHub repository</p>
+        <h2 class="repo-modal-title" id="d-safar">SAFAR: AI Road Safety Prototype</h2>
+        <p class="repo-modal-summary">A team hackathon prototype, written in R, for SAFAR (Smart AI for Accident Reduction), a road safety system for India. It sketches how to combine accident, weather, blackspot and telematics data, predict accident risk with XGBoost and LIME, and show alerts in a Shiny/Leaflet dashboard.</p>
+        <h3>Highlights</h3>
+        <ul class="repo-points">
+          <li>Plans to combine four data sources: MORTH accident reports, IMD weather, NHAI blackspots and driver telematics</li>
+          <li>Rule-based alert modules for EV proximity, dark zones (lux thresholds), landslide risk on hilly roads and driver fatigue</li>
+          <li>Built for a hackathon at NIT Rourkela by Ankit Anand, Vishwajeet Rawat and Ishita Rawat</li>
+        </ul>
+        <h3>Built with</h3>
+        <ul class="repo-tags" aria-label="Tools">
+          <li>R</li><li>Shiny</li><li>Leaflet</li><li>XGBoost</li><li>randomForest</li><li>LIME</li><li>tidyverse</li><li>httr</li>
+        </ul>
+        <div class="repo-modal-links">
+          <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/HACKATHON_NIT_ROURKELA" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>View code<span class="sr-only"> on GitHub (opens in a new tab)</span></a>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="repo-muj" class="modal" aria-labelledby="d-muj">
+      <div class="modal-card repo-modal">
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Close" autofocus>&times;</button>
+        <p class="repo-modal-kicker">GitHub repository</p>
+        <h2 class="repo-modal-title" id="d-muj">AI Financial Document Processing System</h2>
+        <p class="repo-modal-summary">A MUJ Hackathon project in R. It uses Tesseract OCR to read scanned financial documents (salary slips, Form 16/ITR, cheques and bank statements), sorts them by type with keyword rules, extracts key fields, groups transactions into categories and exports ggplot2 charts and an Excel report.</p>
+        <h3>Highlights</h3>
+        <ul class="repo-points">
+          <li>Handles four document types: salary slips, ITR-16 forms, cheques and bank statements</li>
+          <li>Cleans up images with magick (grayscale, contrast, normalization) before OCR, then uses regex to pull out fields such as PAN, net pay and cheque amounts</li>
+          <li>Sorts bank transactions into 13 categories and saves salary-trend, expense-category and monthly cash-flow charts plus an Excel workbook</li>
+        </ul>
+        <h3>Built with</h3>
+        <ul class="repo-tags" aria-label="Tools">
+          <li>R</li><li>Tesseract OCR</li><li>magick</li><li>tidyverse</li><li>ggplot2</li><li>lubridate</li><li>openxlsx</li>
+        </ul>
+        <div class="repo-modal-links">
+          <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/MUJ-HACKATHON" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>View code<span class="sr-only"> on GitHub (opens in a new tab)</span></a>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="repo-tobacco" class="modal" aria-labelledby="d-tobacco">
+      <div class="modal-card repo-modal">
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Close" autofocus>&times;</button>
+        <p class="repo-modal-kicker">GitHub repository</p>
+        <h2 class="repo-modal-title" id="d-tobacco">Tobacco Marketing Data QA/QC</h2>
+        <p class="repo-modal-summary">Work from a PAC internship with Vital Strategies' tobacco unit. An R Markdown workflow runs QA/QC on India TERM data on tobacco marketing in social media and news posts. It checks fields against a codebook, standardises categories, verifies URLs, removes duplicates and exports a clean dataset.</p>
+        <h3>Highlights</h3>
+        <ul class="repo-points">
+          <li>R workflow (tidyverse, janitor, readxl, RCurl) checks columns against a codebook, recodes invalid categories with <code>gsub</code>/<code>setdiff</code>, flags NAs, checks links with <code>url.exists()</code> and removes duplicates with <code>get_dupes()</code></li>
+          <li>Codebook covers tobacco type, account type, marketing tactic (e.g. surrogate advertising, CSR) and message framing for posts from Indian brands and news outlets</li>
+          <li>Includes a 28-slide &ldquo;TERM Methodology: Data Cleaning in R&rdquo; deck covering importing, merging, validating and cleaning, plus India QA/QC and situation-report Excel workbooks (April&ndash;May 2024)</li>
+        </ul>
+        <h3>Built with</h3>
+        <ul class="repo-tags" aria-label="Tools">
+          <li>R</li><li>R Markdown</li><li>Excel</li>
+        </ul>
+        <div class="repo-modal-links">
+          <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/VITAL_STRATGIES_PAC_TOBACCO-UNIT" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>View code<span class="sr-only"> on GitHub (opens in a new tab)</span></a>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="repo-aid" class="modal" aria-labelledby="d-aid">
+      <div class="modal-card repo-modal">
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Close" autofocus>&times;</button>
+        <p class="repo-modal-kicker">GitHub repository</p>
+        <h2 class="repo-modal-title" id="d-aid">Foreign Aid DEA Panel QA-QC</h2>
+        <p class="repo-modal-summary">An R pipeline that builds a panel dataset for 36 African countries for Data Envelopment Analysis of foreign aid efficiency. It reshapes World Bank-style indicator data into Country &times; Year &times; Indicator form and checks missing data by country, year and indicator.</p>
+        <h3>Highlights</h3>
+        <ul class="repo-points">
+          <li>36 African countries (West, East, Central and Southern Africa) treated as DMUs for DEA</li>
+          <li>Reshapes about 44 indicators, including net ODA received, from wide year columns into long and panel formats exported to Excel</li>
+          <li>Missingness diagnostics: coverage by indicator, country and year, Country &times; Indicator heatmaps, and a first year with at least 80% complete coverage</li>
+        </ul>
+        <h3>Built with</h3>
+        <ul class="repo-tags" aria-label="Tools">
+          <li>R</li><li>R Markdown</li><li>dplyr</li><li>tidyr</li><li>readxl</li><li>writexl</li><li>ggplot2</li><li>naniar</li>
+        </ul>
+        <div class="repo-modal-links">
+          <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/FOREGIN_AID_DMUS_QA-QC" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>View code<span class="sr-only"> on GitHub (opens in a new tab)</span></a>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="repo-property" class="modal" aria-labelledby="d-property">
+      <div class="modal-card repo-modal">
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Close" autofocus>&times;</button>
+        <p class="repo-modal-kicker">GitHub repository</p>
+        <h2 class="repo-modal-title" id="d-property">Optimal Property Location Analysis</h2>
+        <p class="repo-modal-summary">An R analysis of residential property sales that looks for the best locations and times to buy. It cleans sale records, builds a price-per-square-foot measure, and uses regression and plots to compare trends by year, quarter, bedrooms, bathrooms and area, including areas near highways.</p>
+        <h3>Highlights</h3>
+        <ul class="repo-points">
+          <li>Sale records (address, square feet, sale date, price, beds, baths) for Charlotte, NC addresses, covering sales in 2021&ndash;2023</li>
+          <li>Linear regression of price per square foot over time, with separate trend slopes for 1-, 2- and 3-bedroom and 1&ndash;3 bathroom homes</li>
+          <li>Separate scripts and datasets for main-city areas, outlying areas and two near-highway areas</li>
+        </ul>
+        <h3>Built with</h3>
+        <ul class="repo-tags" aria-label="Tools">
+          <li>R</li><li>ggplot2</li><li>dplyr</li><li>tidyr</li><li>lubridate</li><li>stringr</li>
+        </ul>
+        <div class="repo-modal-links">
+          <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/Property-Analysis" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>View code<span class="sr-only"> on GitHub (opens in a new tab)</span></a>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="repo-nifty" class="modal" aria-labelledby="d-nifty">
+      <div class="modal-card repo-modal">
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Close" autofocus>&times;</button>
+        <p class="repo-modal-kicker">GitHub repository</p>
+        <h2 class="repo-modal-title" id="d-nifty">NIFTY 500 Stock Price Analysis</h2>
+        <p class="repo-modal-summary">An R analysis of NIFTY 500 company stock prices from 2019 to 2022. It uses descriptive statistics (mean, median, mode, variance, standard deviation, quantiles) to look at skewness and volatility, and finds outliers by year and month with IQR methods.</p>
+        <h3>Highlights</h3>
+        <ul class="repo-points">
+          <li>Dataset of about 4,500 daily records (open, high, low, close, volume) across 546 listed names</li>
+          <li>Used mean versus median comparisons to read skewness in closing prices</li>
+          <li>Found outliers with IQR rules and drew box plots and faceted histograms by year and month</li>
+        </ul>
+        <h3>Built with</h3>
+        <ul class="repo-tags" aria-label="Tools">
+          <li>R</li><li>tidyverse</li><li>dplyr</li><li>ggplot2</li><li>lubridate</li>
+        </ul>
+        <div class="repo-modal-links">
+          <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/NIFTY-500" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>View code<span class="sr-only"> on GitHub (opens in a new tab)</span></a>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="repo-inflation" class="modal" aria-labelledby="d-inflation">
+      <div class="modal-card repo-modal">
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Close" autofocus>&times;</button>
+        <p class="repo-modal-kicker">GitHub repository</p>
+        <h2 class="repo-modal-title" id="d-inflation">CPI and WPI Inflation Analysis</h2>
+        <p class="repo-modal-summary">A SQL analysis of India's 2023 Wholesale Price Index (April to September) and Consumer Price Index (July to August). It compares commodity price indices month by month, computes percentage changes, compares rural, urban and combined CPI, and joins the two tables for comparison.</p>
+        <h3>Highlights</h3>
+        <ul class="repo-points">
+          <li>Data from official Indian releases: MoSPI CPI press release (Oct 2023) and Office of the Economic Adviser monthly WPI</li>
+          <li>Month-over-month and April to September percentage-change queries across about 40 WPI commodity groups</li>
+          <li>Cross-checks the published combined CPI against the average of the rural and urban indices</li>
+        </ul>
+        <h3>Built with</h3>
+        <ul class="repo-tags" aria-label="Tools">
+          <li>SQL</li><li>MySQL</li>
+        </ul>
+        <div class="repo-modal-links">
+          <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/CPI-and-WPI-Analysis" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>View code<span class="sr-only"> on GitHub (opens in a new tab)</span></a>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="repo-am" class="modal" aria-labelledby="d-am">
+      <div class="modal-card repo-modal">
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Close" autofocus>&times;</button>
+        <p class="repo-modal-kicker">GitHub repository</p>
+        <h2 class="repo-modal-title" id="d-am">Amplitude Modulation Analysis</h2>
+        <p class="repo-modal-summary">A Wolfram Mathematica notebook on the theory of amplitude modulation, covering carrier, modulating and modulated signals. It uses Fourier and inverse Fourier transforms to show the carrier and the upper and lower sidebands in the spectrum.</p>
+        <h3>Highlights</h3>
+        <ul class="repo-points">
+          <li>Worked example: the modulated signal <code>Cos(5x)*[Cos(x)+1]</code>, with a carrier at frequency 5 and a modulating tone at frequency 1</li>
+          <li>Spectrum built with <code>FourierTransform</code>, showing the carrier, upper and lower sidebands, and a Dirac delta at zero frequency from the constant component</li>
+          <li><code>InverseFourierTransform</code> used to recover the original AM waveform from its spectrum</li>
+        </ul>
+        <h3>Built with</h3>
+        <ul class="repo-tags" aria-label="Tools">
+          <li>Mathematica</li>
+        </ul>
+        <div class="repo-modal-links">
+          <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/Amplitude-Modulation-analysis" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>View code<span class="sr-only"> on GitHub (opens in a new tab)</span></a>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="repo-practicals" class="modal" aria-labelledby="d-practicals">
+      <div class="modal-card repo-modal">
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Close" autofocus>&times;</button>
+        <p class="repo-modal-kicker">GitHub repository</p>
+        <h2 class="repo-modal-title" id="d-practicals">Mathematica Calculus and Numerical Practicals</h2>
+        <p class="repo-modal-summary">A collection of Mathematica notebooks and PDF exports from coursework for the BMATHS Calculus course, together with my own experiments. It covers calculus practicals, numerical root-finding assignments and a visualisation of fundamental solutions to the Laplace equation.</p>
+        <h3>Highlights</h3>
+        <ul class="repo-points">
+          <li>18 numbered calculus practicals and 4 assignments, saved as Mathematica notebooks and PDFs</li>
+          <li>Bisection and false-position root-finding written from scratch, with iteration tables tracking error to a 10<sup>&minus;6</sup> tolerance</li>
+          <li>Laplace equation demo that overlays <code>ContourPlot</code> equipotentials and <code>StreamPlot</code> flow lines for cos(x)&thinsp;cosh(y)</li>
+        </ul>
+        <h3>Built with</h3>
+        <ul class="repo-tags" aria-label="Tools">
+          <li>Mathematica</li>
+        </ul>
+        <div class="repo-modal-links">
+          <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/Mathematica-Practicals" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>View code<span class="sr-only"> on GitHub (opens in a new tab)</span></a>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="repo-conics" class="modal" aria-labelledby="d-conics">
+      <div class="modal-card repo-modal">
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Close" autofocus>&times;</button>
+        <p class="repo-modal-kicker">GitHub repository</p>
+        <h2 class="repo-modal-title" id="d-conics">Conic Shapes Drawing Module</h2>
+        <p class="repo-modal-summary">A Python module that draws conic sections and other mathematical curves with the turtle graphics library. It uses parametric and polar equations and lets you set the center offset, axes, orientation and color for ellipses, parabolas, hyperbolas, cardioids, roses, spirals and more.</p>
+        <h3>Highlights</h3>
+        <ul class="repo-points">
+          <li>Draws ellipses, circles, parabolas, hyperbolas and rectangular hyperbolas from parametric equations (for example x = a&middot;sec t, y = b&middot;tan t)</li>
+          <li>Extended set of curves: cardioid, lima&ccedil;on, rose curve, spiral, astroid, cycloid, epitrochoid, hypotrochoid, lemniscate, cissoid, witch of Agnesi and heart curve</li>
+          <li>Class-based <code>ConicDrawer</code> with axes drawing, plus a mode that runs each shape in its own separate process</li>
+        </ul>
+        <h3>Built with</h3>
+        <ul class="repo-tags" aria-label="Tools">
+          <li>Python</li><li>turtle graphics</li><li>GitHub Actions</li>
+        </ul>
+        <div class="repo-modal-links">
+          <a class="btn-outline repo-btn" href="https://github.com/Chuggu12/CONIC_SHAPES" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>View code<span class="sr-only"> on GitHub (opens in a new tab)</span></a>
+        </div>
+      </div>
+    </dialog>
+  </main>
+  <footer class="site-footer">
+    <p>&copy; <span data-year>2026</span> Ankit Anand &middot; <a href="mailto:ankitanand_23mae04@dtu.ac.in">ankitanand_23mae04@dtu.ac.in</a> &middot; <a href="https://github.com/Chuggu12" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,173 @@
+/* =========================================================
+   OPEN SOURCE PAGE (open-source.html)
+   Wix "OPEN SOURCE" page: spaced Lulo heading + GitHub contribution snake on slate.
+   The Wix "COMING SOON..." line is replaced by the owner's public repositories,
+   shown as dark cards in the style of the Wix project cards.
+   ========================================================= */
+
+.os-page { background: var(--slate); padding-bottom: 120px; }
+.os-page .icon-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* ---------- Heading + snake ---------- */
+.os-head { max-width: calc(1301px + 40px); margin: 0 auto; padding: 41px 20px 0; }
+.os-title { /* one line across ~1250px at 1440, like the Wix text box (1301px, left-aligned) */
+  font-size: clamp(26px, 3.9vw, 56px); line-height: 1.25; letter-spacing: .14em;
+  color: #fff; text-align: left;
+}
+.os-snake { margin-top: 56px; }
+
+/* "MY REPOSITORIES": same type as the Wix "COMING SOON..." line it replaces */
+.os-repos { max-width: 1340px; margin: 0 auto; padding: 0 20px; }
+.os-kicker {
+  position: relative; margin-top: -30px; text-align: center;
+  font: 700 40px/1.2 var(--f-avenir); color: var(--green); text-transform: uppercase; letter-spacing: 0;
+}
+.os-intro {
+  max-width: 640px; margin: 10px auto 0; text-align: center;
+  font: 300 18px/1.6 var(--f-avenir); letter-spacing: .02em; color: #d4d8e2;
+}
+
+/* ---------- Repository grid ---------- */
+.repo-grid { /* 3 cards per row on a 6-track grid, so a short last row can be centred */
+  list-style: none; margin: 46px 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 34px 30px;
+}
+.repo-grid > li { grid-column: span 2; display: flex; min-width: 0; }
+@media (min-width: 1181px) {
+  .repo-grid > li:nth-child(3n+1):nth-last-child(2) { grid-column: 2 / span 2; }
+  .repo-grid > li:nth-child(3n+1):last-child { grid-column: 3 / span 2; }
+}
+
+.repo-card {
+  display: flex; flex-direction: column; width: 100%;
+  background: var(--charcoal); border: 1px solid rgba(255, 255, 255, .07);
+  box-shadow: 0 10px 26px rgba(5, 9, 20, .22);
+  transition: transform .45s var(--ease-wix), box-shadow .45s ease, border-color .45s ease;
+}
+.repo-card:hover, .repo-card:focus-within {
+  transform: translateY(-6px);
+  border-color: var(--green);
+  box-shadow: 0 22px 44px rgba(5, 9, 20, .5), 0 0 0 1px rgba(0, 214, 70, .5), 0 0 26px rgba(0, 214, 70, .22);
+}
+
+.repo-thumb { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #fff; }
+.repo-thumb img {
+  width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, 50% 50%);
+  transition: transform 1.2s var(--ease-wix);
+}
+.repo-thumb::after { /* soft edge where the image meets the dark card */
+  content: ""; position: absolute; inset: auto 0 0 0; height: 36%;
+  background: linear-gradient(180deg, transparent, rgba(45, 45, 45, .28));
+  pointer-events: none;
+}
+.repo-card:hover .repo-thumb img { transform: scale(1.05); }
+
+.repo-body { display: flex; flex-direction: column; flex: 1; padding: 26px 26px 28px; text-align: center; }
+.repo-title {
+  font: 700 21px/1.3 var(--f-avenir); color: #fff; text-transform: uppercase; letter-spacing: .02em;
+}
+.repo-summary { margin-top: 12px; font: 400 15px/1.6 var(--f-avenir); color: #e4e4e4; }
+
+.repo-tags {
+  list-style: none; margin: 18px 0 0; padding: 0;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+}
+.repo-tags li {
+  padding: 4px 12px; border: 1px solid rgba(0, 214, 70, .45); border-radius: 999px;
+  background: rgba(0, 214, 70, .08); color: #c9f5d6;
+  font: 600 12px/1.35 var(--f-avenir); letter-spacing: .03em; white-space: nowrap;
+}
+.repo-tags li.more { background: transparent; border-style: dashed; color: #a9c2b0; }
+
+/* divider + actions sit at the bottom so rows of cards line up */
+.repo-foot {
+  margin-top: auto; padding-top: 24px;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+}
+.repo-foot::before { /* Wix-style grey rule, fills green on hover */
+  content: ""; flex: 0 0 100%; height: 3px; margin-bottom: 12px;
+  background:
+    linear-gradient(var(--green), var(--green)) center / 0 100% no-repeat,
+    linear-gradient(var(--gray-band), var(--gray-band)) center / 80% 100% no-repeat;
+  transition: background-size .6s var(--ease-wix);
+}
+.repo-card:hover .repo-foot::before, .repo-card:focus-within .repo-foot::before {
+  background-size: 80% 100%, 80% 100%;
+}
+
+/* compact buttons built on the shared .btn-green / .btn-outline */
+.os-page .repo-btn {
+  min-width: 0; height: 40px; padding: 0 16px; gap: 7px;
+  font: 700 12.5px/1 var(--f-avenir); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap;
+}
+.os-page .btn-green { /* dark text keeps contrast on the bright green */
+  color: #0b1330; transition: background-color .3s ease, transform .3s var(--ease-wix), box-shadow .3s ease;
+}
+.os-page .btn-green:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0, 214, 70, .25); }
+.os-page .btn-green:active { transform: none; }
+.repo-btn svg, .os-all svg { width: 15px; height: 15px; flex: none; fill: currentColor; }
+
+/* ---------- "View all on GitHub" ---------- */
+.os-cta { margin-top: 64px; text-align: center; }
+.os-page .os-all {
+  height: 52px; padding: 0 32px; gap: 12px;
+  font: 700 15px/1 var(--f-avenir); letter-spacing: .1em; text-transform: uppercase;
+}
+.os-all svg { width: 20px; height: 20px; }
+
+/* ---------- Details dialogs ---------- */
+.repo-modal { padding: 40px 44px 34px; }
+.repo-modal-kicker {
+  font: 800 12px/1.4 var(--f-avenir); letter-spacing: .2em; text-transform: uppercase; color: var(--green);
+}
+.repo-modal-title {
+  margin-top: 8px; padding-right: 34px;
+  font: 700 26px/1.25 var(--f-avenir); color: #fff; text-transform: uppercase; letter-spacing: .02em;
+}
+.repo-modal-summary { margin-top: 16px; font: 400 16px/1.65 var(--f-avenir); color: #e2e2e2; }
+.repo-modal h3 {
+  margin: 28px 0 12px; font: 800 14px/1.3 var(--f-avenir); letter-spacing: .16em; text-transform: uppercase; color: var(--olive);
+}
+.repo-points { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.repo-points li { position: relative; padding-left: 26px; font: 400 15px/1.6 var(--f-avenir); color: #d9d9d9; }
+.repo-points li::before { /* a contribution-graph cell as the bullet */
+  content: ""; position: absolute; left: 3px; top: .5em; width: 10px; height: 10px; border-radius: 2px;
+  background: var(--green); box-shadow: 0 0 0 1px #000;
+}
+.repo-modal code {
+  padding: 1px 5px; border-radius: 3px; background: rgba(255, 255, 255, .07); color: var(--lime);
+  font: 500 .9em/1 Consolas, "SFMono-Regular", Menlo, monospace; overflow-wrap: anywhere;
+}
+.repo-modal sup { line-height: 0; }
+.repo-modal .repo-tags { justify-content: flex-start; margin-top: 0; }
+.repo-modal-links {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; padding-top: 22px; border-top: 3px solid var(--gray-band);
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 861px) and (max-width: 1180px) {
+  .repo-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px 26px; }
+  .repo-grid > li:nth-child(2n+1):last-child { grid-column: 2 / span 2; }
+}
+
+@media (max-width: 860px) {
+  .os-page { padding-bottom: 80px; }
+  .os-head { padding: 34px 16px 0; }
+  .os-repos { padding: 0 16px; }
+  .os-title { font-size: clamp(24px, 6.6vw, 44px); letter-spacing: .12em; }
+  .os-snake { margin-top: 26px; }
+  .os-kicker { margin-top: 8px; font-size: 28px; }
+  .os-intro { font-size: 16px; }
+  .repo-grid { grid-template-columns: 1fr; max-width: 560px; margin: 32px auto 0; gap: 26px; }
+  .repo-grid > li { grid-column: auto; }
+  .repo-body { padding: 22px 18px 24px; }
+  .repo-title { font-size: 19px; }
+  .os-cta { margin-top: 48px; }
+  .repo-modal { padding: 34px 20px 26px; }
+  .repo-modal-title { font-size: 21px; }
+}
+
+@media (max-width: 400px) {
+  .os-page .repo-btn { padding: 0 13px; letter-spacing: .06em; }
+  .os-page .os-all { padding: 0 22px; letter-spacing: .06em; }
+}
