@@ -255,6 +255,81 @@
     if (document.hidden) document.querySelectorAll("video").forEach(function (v) { v.pause(); });
   });
 
+  /* ---------- live GitHub repositories ([data-gh-user]) ----------
+     Refreshes [data-gh-count] and each [data-gh-repo] meta line (language, last update, stars)
+     from the public GitHub API, and appends any repo not yet on the page into [data-gh-extra].
+     The static HTML stays as-is if the API is unreachable or rate-limited. */
+  var ghRoot = document.querySelector("[data-gh-user]");
+  if (ghRoot && window.fetch) {
+    var ghUser = ghRoot.getAttribute("data-gh-user");
+    var ghSkip = [ghUser.toLowerCase(), (ghUser + ".github.io").toLowerCase()]; // profile README + this site
+    var ghKey = "gh-repos-" + ghUser;
+    var langColor = { Python: "#3572a5", R: "#198ce7", Mathematica: "#dd1100", JavaScript: "#f1e05a", HTML: "#e34c26", SQL: "#e38c00", TeX: "#3d6117", "Jupyter Notebook": "#da5b0b", Stata: "#1a5f91" };
+    var fmtDate = function (iso) { return new Date(iso).toLocaleDateString("en-GB", { month: "short", year: "numeric" }); };
+
+    var buildCard = function (r) {
+      var li = document.createElement("li");
+      li.setAttribute("data-anim", "fade-expand");
+      li.className = "is-in";
+      li.innerHTML = '<article class="repo-card"><div class="repo-thumb repo-thumb--gh" aria-hidden="true">' +
+        '<svg focusable="false"><use href="#i-github"/></svg></div><div class="repo-body"><h3 class="repo-title"></h3>' +
+        '<p class="repo-summary"></p><ul class="repo-tags" aria-label="Details"></ul><div class="repo-foot">' +
+        '<a class="btn-outline repo-btn" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#i-github"/></svg>Code' +
+        '<span class="sr-only"> on GitHub (opens in a new tab)</span></a></div></div></article>';
+      li.querySelector(".repo-title").textContent = r.name.replace(/[_-]+/g, " ");
+      li.querySelector(".repo-summary").textContent = r.description || "Public repository on GitHub.";
+      var tags = li.querySelector(".repo-tags");
+      [r.language, "Updated " + fmtDate(r.pushed_at)].forEach(function (t) {
+        if (!t) return;
+        var tag = document.createElement("li");
+        tag.textContent = t;
+        tags.appendChild(tag);
+      });
+      li.querySelector("a").href = "https://github.com/" + ghUser + "/" + encodeURIComponent(r.name);
+      return li;
+    };
+
+    var renderRepos = function (repos) {
+      repos = repos.filter(function (r) { return !r.fork && !r.private && ghSkip.indexOf(r.name.toLowerCase()) < 0; });
+      document.querySelectorAll("[data-gh-count]").forEach(function (el) { el.textContent = repos.length; });
+      var byName = {};
+      repos.forEach(function (r) { byName[r.name.toLowerCase()] = r; });
+      document.querySelectorAll("[data-gh-repo]").forEach(function (meta) {
+        var r = byName[meta.getAttribute("data-gh-repo").toLowerCase()];
+        if (!r) return;
+        var lang = meta.querySelector(".gh-lang"), upd = meta.querySelector(".gh-updated");
+        if (lang && r.language) { lang.textContent = r.language; lang.style.setProperty("--c", langColor[r.language] || "#9aa3ad"); }
+        if (upd) upd.textContent = "Updated " + fmtDate(r.pushed_at);
+        var stars = meta.querySelector(".gh-stars");
+        if (r.stargazers_count && !stars) { stars = document.createElement("span"); stars.className = "gh-stars"; meta.appendChild(stars); }
+        if (stars) stars.textContent = "★ " + r.stargazers_count;
+      });
+      var extra = document.querySelector("[data-gh-extra]");
+      if (!extra) return;
+      var shown = {};
+      document.querySelectorAll('a[href^="https://github.com/' + ghUser + '/"]').forEach(function (a) {
+        var name = a.getAttribute("href").split("/")[4];
+        if (name) shown[decodeURIComponent(name).toLowerCase()] = true;
+      });
+      repos.forEach(function (r) { if (!shown[r.name.toLowerCase()]) extra.appendChild(buildCard(r)); });
+    };
+
+    var cached = null;
+    try { cached = JSON.parse(sessionStorage.getItem(ghKey) || "null"); } catch (e) { cached = null; }
+    if (cached && Date.now() - cached.t < 3600000) {
+      renderRepos(cached.repos);
+    } else {
+      fetch("https://api.github.com/users/" + encodeURIComponent(ghUser) + "/repos?per_page=100&sort=pushed", { headers: { Accept: "application/vnd.github+json" } })
+        .then(function (res) { if (!res.ok) throw new Error(res.status); return res.json(); })
+        .then(function (repos) {
+          if (!Array.isArray(repos)) return;
+          try { sessionStorage.setItem(ghKey, JSON.stringify({ t: Date.now(), repos: repos })); } catch (e) { /* storage unavailable */ }
+          renderRepos(repos);
+        })
+        .catch(function () { /* keep the static cards */ });
+    }
+  }
+
   /* ---------- footer year ---------- */
   document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();

@@ -171,3 +171,8 @@
   .os-page .repo-btn { padding: 0 13px; letter-spacing: .06em; }
   .os-page .os-all { padding: 0 22px; letter-spacing: .06em; }
 }
+
+/* placeholder thumb for repos added live from the GitHub API (main.js) */
+.repo-thumb--gh { display: grid; place-items: center; background: linear-gradient(135deg, #3a4560, #232a3b); }
+.repo-thumb--gh::after { display: none; }
+.repo-thumb--gh svg { width: 64px; height: 64px; fill: #dfe5ee; opacity: .85; }
